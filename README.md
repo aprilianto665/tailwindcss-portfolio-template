@@ -1,3 +1,3 @@
 # tailwindcss-portfolio-template
 
-Portfolio website template built with reactjs and tailwindcss
+Portfolio website template built with reactjs and tailwindcs
