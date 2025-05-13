@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import ProjectIcon from "./ProjectIcon";
 
 // Navigation buttons and thumbnails component
-const Navigation = ({ 
-  projects, 
-  activeIndex, 
-  handleThumbnailClick, 
+const Navigation = ({
+  projects,
+  activeIndex,
+  handleThumbnailClick,
   navigateProject,
   thumbnailsRef,
-  thumbnailsContainerRef
+  thumbnailsContainerRef,
 }) => (
   <>
     <div className="flex items-center justify-between mb-4">
@@ -41,24 +41,26 @@ const Navigation = ({
       </motion.button>
 
       {/* Thumbnails container */}
-      <div 
+      <div
         className="flex-grow mx-4 overflow-hidden"
         ref={thumbnailsContainerRef}
       >
         <div
           ref={thumbnailsRef}
-          className="flex overflow-x-auto scrollbar-hide gap-6 py-4 px-4"
+          className="flex overflow-x-auto scrollbar-hide gap-6 py-4 px-4 justify-center"
         >
           {projects.map((project, index) => (
             <motion.div
-              key={`thumb-${index}-${project.title.replace(/\s+/g, '-').toLowerCase()}`}
+              key={`thumb-${index}-${project.title
+                .replace(/\s+/g, "-")
+                .toLowerCase()}`}
               onClick={() => handleThumbnailClick(index)}
               className="relative flex-shrink-0"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                delay: 0.2 + (index * 0.05),
-                duration: 0.3
+              transition={{
+                delay: 0.2 + index * 0.05,
+                duration: 0.3,
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -123,8 +125,12 @@ const Navigation = ({
 );
 
 // Slide indicators component
-export const SlideIndicators = ({ projects, activeIndex, handleThumbnailClick }) => (
-  <motion.div 
+export const SlideIndicators = ({
+  projects,
+  activeIndex,
+  handleThumbnailClick,
+}) => (
+  <motion.div
     className="flex justify-center gap-2 mt-2 mb-2"
     initial={{ opacity: 0, y: 5 }}
     animate={{ opacity: 1, y: 0 }}
@@ -142,9 +148,9 @@ export const SlideIndicators = ({ projects, activeIndex, handleThumbnailClick })
         aria-label={`Go to slide ${index + 1}`}
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ 
-          delay: 0.3 + (index * 0.03), 
-          duration: 0.2 
+        transition={{
+          delay: 0.3 + index * 0.03,
+          duration: 0.2,
         }}
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}

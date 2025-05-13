@@ -81,7 +81,7 @@ export default function Certificates() {
   });
 
   return (
-    <section className="w-screen mx-auto py-4 bg-gray-800 text-gray-200 pb-16 relative overflow-hidden">
+    <section className="w-screen mx-auto py-4 bg-gray-800 text-gray-200 pb-16 relative overflow-hidden min-h-screen">
       {/* Parallax Decorative elements */}
       <motion.div
         style={{ y: y1 }}

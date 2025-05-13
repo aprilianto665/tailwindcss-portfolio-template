@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import AboutMe from "./pages/AboutMe";
 import Portfolio from "./pages/Portfolio";
 import Certificates from "./pages/Certificates";
+import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<AboutMe />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/certificates" element={<Certificates />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

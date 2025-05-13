@@ -23,14 +23,10 @@ export default function SteamStyleFeatured({ projects }) {
 
   // Custom hooks
   const { isLoaded, imagesLoaded } = useImageLoading(projects, activeIndex);
-  
-  const { 
-    autoScrollRef, 
-    startTimeRef, 
-    pausedTimeRef, 
-    elapsedTimeRef 
-  } = useAutoRotation(isLoaded, projects, activeIndex, setActiveIndex, isPaused);
-  
+
+  const { autoScrollRef, startTimeRef, pausedTimeRef, elapsedTimeRef } =
+    useAutoRotation(isLoaded, projects, activeIndex, setActiveIndex, isPaused);
+
   const { scrollToThumbnail } = useThumbnailScroll(
     thumbnailsRef,
     thumbnailsContainerRef,
@@ -41,7 +37,13 @@ export default function SteamStyleFeatured({ projects }) {
 
   // Handle thumbnail click
   const handleThumbnailClick = (index) => {
-    if (!projects || projects.length === 0 || index === activeIndex || isAnimating) return;
+    if (
+      !projects ||
+      projects.length === 0 ||
+      index === activeIndex ||
+      isAnimating
+    )
+      return;
 
     // Set index directly without animation
     setActiveIndex(index);
@@ -58,10 +60,10 @@ export default function SteamStyleFeatured({ projects }) {
   // Navigate to previous or next project
   const navigateProject = (direction) => {
     if (!projects || projects.length === 0 || isAnimating) return;
-    
+
     // Set a flag to prevent multiple clicks during transition
     setIsAnimating(true);
-    
+
     const newIndex =
       direction === "prev"
         ? (activeIndex - 1 + projects.length) % projects.length
@@ -78,7 +80,7 @@ export default function SteamStyleFeatured({ projects }) {
     if (autoScrollRef.current) {
       clearTimeout(autoScrollRef.current);
     }
-    
+
     // Reset the animation flag after a short delay
     setTimeout(() => {
       setIsAnimating(false);
@@ -92,13 +94,15 @@ export default function SteamStyleFeatured({ projects }) {
 
   // Get current project
   const activeProject = projects[activeIndex];
-  const isCurrentImageLoaded = activeProject.img ? imagesLoaded[activeIndex] : true;
+  const isCurrentImageLoaded = activeProject.img
+    ? imagesLoaded[activeIndex]
+    : true;
 
   return (
     <div className="mb-12 px-4 sm:px-0">
       <div className="container 2xl:w-[1280px] mx-auto px-4 sm:px-16">
         {/* Section title */}
-        <motion.h3 
+        <motion.h3
           className="text-2xl font-bold text-pink-300 mb-4"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
@@ -123,23 +127,26 @@ export default function SteamStyleFeatured({ projects }) {
             {!isCurrentImageLoaded ? (
               <Skeleton />
             ) : (
-              <ProjectContent project={activeProject} activeIndex={activeIndex} />
+              <ProjectContent
+                project={activeProject}
+                activeIndex={activeIndex}
+              />
             )}
           </div>
 
           {/* Thumbnails section with navigation buttons */}
           {projects.length > 1 && (
-            <motion.div 
+            <motion.div
               className="relative mt-6"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 delay: 0.2,
                 duration: 0.3,
-                ease: "easeOut"
+                ease: "easeOut",
               }}
             >
-              <Navigation 
+              <Navigation
                 projects={projects}
                 activeIndex={activeIndex}
                 handleThumbnailClick={handleThumbnailClick}
@@ -152,7 +159,7 @@ export default function SteamStyleFeatured({ projects }) {
 
           {/* Slide indicators - only show if multiple projects */}
           {projects.length > 1 && (
-            <SlideIndicators 
+            <SlideIndicators
               projects={projects}
               activeIndex={activeIndex}
               handleThumbnailClick={handleThumbnailClick}
