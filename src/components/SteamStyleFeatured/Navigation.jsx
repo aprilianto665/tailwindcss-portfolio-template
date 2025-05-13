@@ -47,7 +47,7 @@ const Navigation = ({
       >
         <div
           ref={thumbnailsRef}
-          className="flex overflow-x-auto scrollbar-hide gap-6 py-4 px-4 justify-center"
+          className="flex overflow-x-auto scrollbar-hide gap-6 py-4 px-4 justify-center snap-x snap-mandatory"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -66,9 +66,9 @@ const Navigation = ({
               whileTap={{ scale: 0.95 }}
             >
               <div
-                className={`cursor-pointer min-w-[150px] h-[84px] overflow-hidden transition-all duration-300 ${
+                className={`cursor-pointer min-w-[150px] h-[84px] overflow-hidden transition-all duration-300 snap-center ${
                   activeIndex === index
-                    ? "border-4 border-pink-600 shadow-[4px_4px_0px_#4B5563]"
+                    ? "border-4 border-pink-600 shadow-[4px_4px_0px_#4B5563] scale-105"
                     : "border-2 border-gray-700 opacity-70 hover:opacity-100 hover:border-pink-600/50"
                 }`}
               >

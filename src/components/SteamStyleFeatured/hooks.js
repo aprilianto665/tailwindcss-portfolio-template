@@ -151,37 +151,27 @@ export const useThumbnailScroll = (
         !projects || 
         projects.length <= 1) return;
     
-    const thumbnailWidth = 150 + 16; // width + gap
-    const containerWidth = thumbnailsContainerRef.current.clientWidth;
-    const totalThumbnails = projects.length;
-    let scrollLeft = 0;
+    const thumbnailElements = thumbnailsRef.current.children;
+    if (!thumbnailElements || thumbnailElements.length === 0) return;
     
-    // Special case for first item - align to start
-    if (index === 0) {
-      scrollLeft = 0;
-    }
-    // Special case for last item - align to end if possible
-    else if (index === totalThumbnails - 1) {
-      const maxScroll = thumbnailsRef.current.scrollWidth - containerWidth;
-      scrollLeft = Math.max(0, maxScroll);
-    }
-    // For middle items, center the active thumbnail
-    else {
-      const scrollPosition = index * thumbnailWidth;
-      const centerPosition = scrollPosition - containerWidth / 2 + thumbnailWidth / 2;
-      
-      // Ensure we don't scroll past the ends
-      scrollLeft = Math.max(
-        0,
-        Math.min(
-          centerPosition,
-          thumbnailsRef.current.scrollWidth - containerWidth
-        )
-      );
-    }
+    // Get the active thumbnail element
+    const activeElement = thumbnailElements[index];
+    if (!activeElement) return;
+    
+    // Calculate scroll position to center the active thumbnail
+    const thumbnailWidth = activeElement.offsetWidth;
+    const containerWidth = thumbnailsContainerRef.current.clientWidth;
+    const thumbnailLeft = activeElement.offsetLeft;
+    
+    // Center the active thumbnail in the container
+    const scrollLeft = thumbnailLeft - (containerWidth / 2) + (thumbnailWidth / 2);
+    
+    // Ensure we don't scroll past the ends
+    const maxScroll = thumbnailsRef.current.scrollWidth - containerWidth;
+    const finalScrollLeft = Math.max(0, Math.min(scrollLeft, maxScroll));
 
     thumbnailsRef.current.scrollTo({
-      left: scrollLeft,
+      left: finalScrollLeft,
       behavior: "smooth",
     });
   }, [thumbnailsRef, thumbnailsContainerRef, projects]);
