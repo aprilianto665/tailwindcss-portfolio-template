@@ -1,6 +1,6 @@
 # 🚀 Personal Portfolio Website
 
-![Portfolio Preview](https://cdn.discordapp.com/attachments/1355259701637419051/1371785719730671636/Screenshot_2025-05-13_at_16.41.55.png?ex=68246682&is=68231502&hm=af68b806880d7a106445255a5d6e93bae1279d57c75f08b432e5775831b08eea&)
+![Portfolio Preview](https://cdn.discordapp.com/attachments/1355259701637419051/1372103885002379359/Screenshot_2025-05-14_at_13.50.51.png?ex=68258ed2&is=68243d52&hm=1a80ef44a7b9ebbd03b9c2fbcc954e0aba5c7f8109c89830e59bb9a691d151dc&)
 
 ## 📋 Description
 
@@ -60,11 +60,11 @@ A modern Portfolio Website built with Tailwind CSS and React. This website is de
 ## 📱 Screenshots
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px">
-  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1371785719730671636/Screenshot_2025-05-13_at_16.41.55.png?ex=68246682&is=68231502&hm=af68b806880d7a106445255a5d6e93bae1279d57c75f08b432e5775831b08eea&" alt="AboutSection1" width="300"/>
-  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1371786561771016253/Screenshot_2025-05-13_at_16.49.56.png?ex=6824674a&is=682315ca&hm=bab98bf77b2b1edacb37d1af812951a8db687127578acbf6a6796e799d844a5c&" alt="AboutSection2" width="300"/>
-  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1371787353257021490/Screenshot_2025-05-13_at_16.52.45.png?ex=68246807&is=68231687&hm=2cfde4f3550e27c7d81ba0a5892a3735036f7ddda80286e57c150b92a246c2f6&" alt="PortfolioSection1" width="300"/>
-  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1371787428875993088/Screenshot_2025-05-13_at_16.53.20.png?ex=68246819&is=68231699&hm=2f98bf5db29f797b26800b23e66a24788b56a7c58e72b45eb3d8c1cbb82bf2bb&" alt="PortfolioSection2" width="300"/>
-  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1371787871995822160/Screenshot_2025-05-13_at_16.55.07.png?ex=68246883&is=68231703&hm=8f8479dfa3a6dab2738e26bb1ab6dd9c7aa079277cd5ff48cbc9f1b82fbfaf60&" alt="PortfolioSection2" width="300"/>
+  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1372103885002379359/Screenshot_2025-05-14_at_13.50.51.png?ex=68258ed2&is=68243d52&hm=1a80ef44a7b9ebbd03b9c2fbcc954e0aba5c7f8109c89830e59bb9a691d151dc&" alt="AboutSection1" width="300"/>
+  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1372104064095228024/Screenshot_2025-05-14_at_13.51.35.png?ex=68258efd&is=68243d7d&hm=445f1840e8242570d08ce3ad825d415e9748a59e66b5438201f2e39741cb5b72&" alt="AboutSection2" width="300"/>
+  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1372104087734194216/Screenshot_2025-05-14_at_13.51.42.png?ex=68258f02&is=68243d82&hm=701518986e668567ed8686745c68284b095ae140dabc9668f18fd0fe1c2d4e65&" alt="PortfolioSection1" width="300"/>
+  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1372103942942494721/Screenshot_2025-05-14_at_13.51.06.png?ex=68258ee0&is=68243d60&hm=f0f7d991ec6458ac9ea54e6c219a40f68ef5e0cd39823bcf464d6d69f687d024&" alt="PortfolioSection2" width="300"/>
+  <img src="https://cdn.discordapp.com/attachments/1355259701637419051/1372103984118104064/Screenshot_2025-05-14_at_13.51.16.png?ex=68258eea&is=68243d6a&hm=a57ffb72496dc3ec6536d94b21ba823589bb283e1232494d34cf86c402c3d3a7&" alt="PortfolioSection2" width="300"/>
 
 </div>
 
