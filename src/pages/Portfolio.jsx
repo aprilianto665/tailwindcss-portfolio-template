@@ -55,19 +55,27 @@ export default function Portfolio() {
         <PinkDecorativeElements />
       </motion.div>
 
-      {/* Header Section with animation */}
+      {/* Header Section with animation - styled like About Me page */}
       <motion.div
         ref={headerRef}
         initial={{ opacity: 0, y: 20 }}
         animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
+        className="container 2xl:w-[1280px] mx-auto px-4 lg:px-8 pt-6"
       >
-        <SectionHeader
-          title="Portfolio"
-          description="Check out some of my recent projects and work I've been involved with."
-          color="pink"
-          underlineWidth="w-[190px]"
-        />
+        <div className="relative mb-12 pt-8 sm:pt-10">
+          <span className="absolute -top-0 sm:top-0 left-0 sm:left-0 right-0 sm:right-auto text-center sm:text-left text-8xl min-[550px]:text-8xl min-[640px]:text-9xl font-bold text-pink-600/10">
+            Portfolio
+          </span>
+          <h1 className="text-center sm:text-left text-pink-300 text-5xl sm:text-6xl font-bold relative z-10">
+            Portfolio
+          </h1>
+          <div className="mx-auto sm:mx-0 mt-2 bg-pink-600 w-[100px] h-1"></div>
+          <p className="text-xl text-gray-300 max-w-2xl mt-4">
+            Check out some of my recent projects and work I've been involved
+            with.
+          </p>
+        </div>
       </motion.div>
 
       {/* Steam Style Featured Projects with animation */}

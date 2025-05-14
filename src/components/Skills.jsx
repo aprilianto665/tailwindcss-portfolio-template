@@ -24,53 +24,50 @@ export default function Skills() {
   );
 
   return (
-    <section className="w-screen mx-auto py-8 pb-20 bg-gray-800 text-white relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-12 right-16 opacity-10">
-        <div className="w-20 h-20 border-4 border-yellow-400 rotate-45"></div>
+    <section className="w-screen mx-auto py-4 bg-gray-800 text-gray-200 pb-16 relative overflow-hidden">
+      {/* Decorative elements - matching About Me style */}
+      {/* Minimal decorative elements */}
+      <div className="absolute top-10 right-10 opacity-10">
+        <div className="w-16 h-1 bg-yellow-400"></div>
+        <div className="w-1 h-16 bg-yellow-400 ml-8 -mt-8"></div>
       </div>
 
-      <div className="absolute bottom-20 left-10 opacity-15">
-        <div className="w-0 h-0 border-l-[15px] border-l-transparent border-b-[25px] border-b-yellow-500/30 border-r-[15px] border-r-transparent"></div>
-        <div className="w-0 h-0 border-l-[10px] border-l-transparent border-b-[15px] border-b-yellow-600/20 border-r-[10px] border-r-transparent absolute -top-8 left-12"></div>
+      <div className="absolute bottom-20 left-10 opacity-10">
+        <div className="w-12 h-12 border border-yellow-400"></div>
       </div>
 
-      <div className="absolute top-1/2 right-1/4 opacity-10">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="w-1 h-1 bg-yellow-400 rounded-full absolute"
-            style={{
-              left: `${i * 10}px`,
-            }}
-          ></div>
-        ))}
-      </div>
-
-      <div className="container 2xl:w-[1280px] mx-auto px-4 lg:px-8 flex flex-col lg:flex-row lg:items-start lg:justify-evenly pt-6">
-        {/* Image section */}
-        <div className="p-4 border-4 border-yellow-600 shadow-[8px_8px_0px_#4B5563] origin-bottom -rotate-12 hidden lg:block lg:mr-8 hover:rotate-0 transition-all duration-500 hover:shadow-[0px_8px_15px_rgba(0,0,0,0.3)]">
-          <div className="bg-gradient-to-br from-gray-500 to-gray-700 border-4 border-yellow-600 w-[300px] h-[300px] text-gray-800 flex items-center justify-center text-4xl font-bold relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-tr from-yellow-600/20 to-transparent"></div>
+      <div className="container 2xl:w-[1280px] mx-auto px-4 lg:px-8 flex flex-col lg:flex-row lg:items-start lg:justify-between pt-6">
+        {/* Image section - minimalist design */}
+        <div className="hidden lg:block lg:w-2/5 relative">
+          <div className="relative overflow-hidden z-10 border-l-2 border-t-2 border-yellow-400 p-4">
             {img ? (
-              <img
-                src={img}
-                alt="Skills"
-                className="absolute inset-0 w-full h-full object-cover z-10"
-              />
+              <div className="overflow-hidden">
+                <img
+                  src={img}
+                  alt="Skills"
+                  className="w-full h-auto object-cover shadow-md transform transition-all duration-500 hover:scale-110"
+                />
+              </div>
             ) : (
-              <span className="relative z-10">IMG</span>
+              <div className="w-full h-[350px] bg-gray-900 flex items-center justify-center overflow-hidden">
+                <span className="text-2xl font-light text-yellow-400/50 hover:scale-110 transition-transform duration-500">
+                  IMG
+                </span>
+              </div>
             )}
+            <div className="absolute bottom-0 right-0 w-1/2 h-1 bg-yellow-400"></div>
+            <div className="absolute bottom-0 right-0 w-1 h-1/2 bg-yellow-400"></div>
           </div>
-          <div className="h-10"></div>
         </div>
 
-        {/* Skills section */}
-        <div className="w-full lg:w-auto">
-          <h1 className="text-center sm:text-left text-4xl font-bold mb-2 text-yellow-400">
-            Skills
-          </h1>
-          <div className="mx-auto sm:mx-0 bg-yellow-600 w-[100px] h-3 mb-6"></div>
+        {/* Content section */}
+        <div className="w-full lg:w-1/2">
+          <div className="relative mb-12">
+            <h1 className="text-center sm:text-left text-yellow-400 text-5xl sm:text-6xl font-bold relative z-10">
+              Skills
+            </h1>
+            <div className="mx-auto sm:mx-0 mt-2 bg-yellow-400 w-[60px] h-[2px]"></div>
+          </div>
 
           <div className="max-w-full">
             {/* Frontend Skills */}

@@ -81,7 +81,7 @@ export default function Certificates() {
   });
 
   return (
-    <section className="w-screen mx-auto py-4 bg-gray-800 text-gray-200 pb-16 relative overflow-hidden min-h-screen">
+    <section className="w-screen mx-auto py-4 bg-gray-800 text-gray-200 pb-16 relative overflow-hidden">
       {/* Parallax Decorative elements */}
       <motion.div
         style={{ y: y1 }}
@@ -96,13 +96,21 @@ export default function Certificates() {
         initial={{ opacity: 0, y: 20 }}
         animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
+        className="container 2xl:w-[1280px] mx-auto px-4 lg:px-8 pt-6"
       >
-        <SectionHeader
-          title="Certificates"
-          description="Professional certifications and courses I've completed to enhance my skills and knowledge."
-          color="green"
-          underlineWidth="w-[265px]"
-        />
+        <div className="relative mb-12">
+          <span className="absolute text-7xl sm:text-8xl min-[768px]:text-9xl font-bold text-green-600/5 -top-4 sm:-top-5 min-[768px]:-top-10 left-0 right-0 sm:right-auto text-center sm:text-left">
+            Certificates
+          </span>
+          <h1 className="text-center sm:text-left text-green-300 text-5xl sm:text-6xl font-bold relative z-10">
+            Certificates
+          </h1>
+          <div className="mx-auto sm:mx-0 mt-2 bg-green-600 w-[100px] h-1"></div>
+          <p className="mt-4 text-gray-300">
+            Professional certifications and courses I've completed to enhance my
+            skills and knowledge.
+          </p>
+        </div>
       </motion.div>
 
       {/* Filter Buttons with animation */}
@@ -154,7 +162,7 @@ export default function Certificates() {
 
         {filteredCertificates.length === 0 && (
           <motion.div
-            className="text-center py-8"
+            className="text-center py-20 min-h-[50vh] flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}

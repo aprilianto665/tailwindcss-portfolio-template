@@ -25,11 +25,24 @@ export default function Navbar() {
     <header className="w-screen mx-auto bg-gray-800">
       <nav className="flex flex-wrap justify-between items-center max-w-7xl mx-auto px-5">
         <div className="flex flex-shrink-0 items-center py-2">
-          <div className="group relative overflow-hidden mt-4 mx-2 inline-block md:mt-0 font-bold text-2xl bg-gradient-to-r from-white to-gray-100 px-5 py-3 border-4 border-black transform transition-all duration-300 hover:scale-105 hover:rotate-1 hover:shadow-[6px_6px_0px_#000000] shadow-[4px_4px_0px_#000000] text-gray-800">
-            <div className="absolute top-0 left-0 w-2 h-full bg-gray-800"></div>
-            <span className="relative z-10">{name}</span>
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></span>
-          </div>
+          <Link
+            to="/"
+            className="group relative mt-4 mx-2 inline-block md:mt-0"
+          >
+            <div className="relative px-5 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-xl animate-gradient-x"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-300 animate-gradient-x"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/30 group-hover:via-purple-500/30 group-hover:to-pink-500/30 transition-all duration-500 rounded-xl"></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                <div className="w-0 h-0 group-hover:w-full group-hover:h-full bg-gradient-to-br from-white/10 via-cyan-400/20 to-transparent rounded-full blur-lg transition-all duration-700 animate-pulse"></div>
+              </div>
+              <span className="relative z-10 font-bold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-gray-200 animate-gradient-x group-hover:from-white group-hover:via-cyan-200 group-hover:to-blue-100 transition-all duration-300">
+                {name}
+              </span>
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent"></div>
+              <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-blue-400/20 to-transparent rounded-full blur-xl"></div>
+            </div>
+          </Link>
         </div>
 
         <div className="block md:hidden">

@@ -16,7 +16,7 @@ const Navigation = ({
       {/* Previous button */}
       <motion.button
         onClick={() => navigateProject("prev")}
-        className="flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white p-2 rounded-full shadow-lg transition-all duration-300"
+        className="flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white p-2 shadow-lg transition-all duration-300"
         aria-label="Previous project"
         initial={{ opacity: 0, x: -5 }}
         animate={{ opacity: 1, x: 0 }}
@@ -47,7 +47,11 @@ const Navigation = ({
       >
         <div
           ref={thumbnailsRef}
-          className="flex overflow-x-auto scrollbar-hide gap-6 py-4 px-4 justify-center snap-x snap-mandatory"
+          className="flex overflow-x-auto scrollbar-hide gap-6 py-4 px-4 md:justify-center snap-x snap-mandatory"
+          style={{
+            scrollPaddingLeft: activeIndex === 0 ? "50%" : "0",
+            scrollBehavior: "smooth",
+          }}
         >
           {projects.map((project, index) => (
             <motion.div
@@ -97,7 +101,7 @@ const Navigation = ({
       {/* Next button */}
       <motion.button
         onClick={() => navigateProject("next")}
-        className="flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white p-2 rounded-full shadow-lg transition-all duration-300"
+        className="flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white p-2 shadow-lg transition-all duration-300"
         aria-label="Next project"
         initial={{ opacity: 0, x: 5 }}
         animate={{ opacity: 1, x: 0 }}
@@ -140,7 +144,7 @@ export const SlideIndicators = ({
       <motion.button
         key={`indicator-${index}`}
         onClick={() => handleThumbnailClick(index)}
-        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+        className={`w-2 h-2 transition-all duration-300 ${
           activeIndex === index
             ? "bg-pink-500 w-4"
             : "bg-gray-600 hover:bg-gray-400"

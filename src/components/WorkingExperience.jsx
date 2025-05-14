@@ -30,10 +30,12 @@ export default function WorkingExperience() {
 
       {/* title */}
       <div className="container 2xl:w-[1280px] mx-auto px-4 lg:px-8 pt-6">
-        <h1 className="text-center sm:text-left text-4xl font-bold mb-2 text-purple-400">
-          Working Experience
-        </h1>
-        <div className="mx-auto sm:mx-0 bg-purple-600 w-[205px] min-[398px]:w-[365px] h-3 mb-8"></div>
+        <div className="relative mb-12">
+          <h1 className="text-center sm:text-left text-purple-400 text-5xl sm:text-6xl font-bold relative z-10">
+            Working Experience
+          </h1>
+          <div className="mx-auto sm:mx-0 mt-2 bg-purple-400 w-[100px] h-[2px]"></div>
+        </div>
 
         {/* content */}
         <div className="space-y-8 relative">

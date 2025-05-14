@@ -4,6 +4,7 @@ const about = {
   caption:
     "A brief description about yourself. Highlight your professional background, key skills, and what makes you unique. This section should give visitors a quick overview of who you are and what you bring to the table.",
   img: "default.jpg",
+  tags: ["Web Developer", "React", "TailwindCSS"],
 };
 
 // Skills information with categories
